@@ -1,0 +1,3 @@
+import { ArrowUpRight } from 'lucide-react'
+import { Link } from 'react-router-dom'
+export default function ServiceCard({item,index}){return <article className="service-card tilt-card"><div className="service-image"><img src={item.image} alt={item.title}/><span className="service-number">0{index+1}</span></div><div className="service-info"><div><span className="eyebrow">{item.category} · {item.time}</span><h3>{item.title}</h3><p>{item.desc}</p></div><div className="service-bottom"><strong>{item.price}</strong><Link to="/booking" aria-label={`Book ${item.title}`}><ArrowUpRight/></Link></div></div></article>}

@@ -1,0 +1,5 @@
+import SectionHeading from '../components/SectionHeading'
+import ServiceCard from '../components/ServiceCard'
+import { services } from '../data'
+import { Link } from 'react-router-dom'
+export default function Services(){return <><section className="page-hero services-hero"><div className="container"><span className="eyebrow">THE NOIR MENU</span><h1>Good grooming.<br/><em>Great feeling.</em></h1><p>Considered services, tailored to your style and your day.</p></div></section><section className="section-pad"><div className="container"><SectionHeading eyebrow="OUR SERVICES" title="Find your ritual." description="Every service begins with a conversation and ends with the details just right."/><div className="service-grid service-grid-all">{services.map((s,i)=><ServiceCard key={s.title} item={s} index={i}/>)}</div><div className="service-note"><p>Not sure what to choose? We’ll help you find the right fit when you arrive.</p><Link className="btn btn-dark" to="/booking">Book a consultation ↗</Link></div></div></section></>}
