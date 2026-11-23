@@ -7,14 +7,11 @@ import {
   ShieldCheck,
   Clock3,
   Star,
-  Sparkles,
   Award,
   Check,
   Instagram,
-  Play,
 } from "lucide-react";
 
-import SectionHeading from "../components/SectionHeading";
 import ServiceCard from "../components/ServiceCard";
 import { services } from "../data";
 
@@ -107,11 +104,6 @@ export default function Home() {
           to { opacity: 1; transform: translateY(0); }
         }
 
-        @keyframes rotateSlow {
-          from { transform: rotate(0deg); }
-          to { transform: rotate(360deg); }
-        }
-
         .reveal-up {
           animation: revealUp .9s ease both;
         }
@@ -164,6 +156,7 @@ export default function Home() {
           .hero-image, .reveal-up {
             animation: none;
           }
+
           .luxury-card, .gallery-item img {
             transition: none;
           }
@@ -172,19 +165,20 @@ export default function Home() {
 
       <main className="noir-home bg-[#11110f] text-[#f1ede5]">
 
-        {/* ================= HERO ================= */}
-        <section className="relative min-h-[580px] overflow-hidden bg-[#11110f] md:min-h-[660px]">
+        {/* HERO SECTION */}
+        <section className="relative min-h-[580px] overflow-hidden bg-[#11110f] pt-[30px] md:min-h-[660px]">
 
           <div className="hero-glow absolute -right-20 top-0 h-[550px] w-[550px]" />
 
-          <div className="absolute inset-0 opacity-[0.07]"
+          <div
+            className="absolute inset-0 opacity-[0.07]"
             style={{
               backgroundImage: "radial-gradient(#c6a56a 1px,transparent 1px)",
-              backgroundSize: "35px 35px"
+              backgroundSize: "35px 35px",
             }}
           />
 
-          <div className="relative mx-auto grid min-h-[580px] max-w-[1250px] items-center gap-5 px-5 py-10 md:min-h-[660px] md:grid-cols-2 md:px-8">
+          <div className="relative mx-auto grid min-h-[580px] max-w-[1250px] items-center gap-5 px-5 py-[30px] md:min-h-[660px] md:grid-cols-2 md:px-8">
 
             <div className="relative z-10 reveal-up">
 
@@ -211,14 +205,18 @@ export default function Home() {
 
               <div className="mt-8 flex flex-wrap items-center gap-4">
 
-                <Link to="/booking"
-                  className="gold-button inline-flex items-center gap-4 bg-[#c6a56a] px-6 py-4 text-sm font-bold text-[#11110f]">
+                <Link
+                  to="/booking"
+                  className="gold-button inline-flex items-center gap-4 bg-[#c6a56a] px-6 py-4 text-sm font-bold text-[#11110f]"
+                >
                   Book Your Experience
                   <ArrowUpRight size={19} />
                 </Link>
 
-                <Link to="/services"
-                  className="outline-button inline-flex items-center gap-3 border border-white/20 px-6 py-4 text-sm">
+                <Link
+                  to="/services"
+                  className="outline-button inline-flex items-center gap-3 border border-white/20 px-6 py-4 text-sm"
+                >
                   Explore Services
                   <ArrowRight size={17} />
                 </Link>
@@ -255,14 +253,16 @@ export default function Home() {
               </div>
             </div>
 
-            {/* 3D HERO VISUAL */}
+            {/* HERO IMAGE */}
             <div className="relative mx-auto flex h-[420px] w-full max-w-[520px] items-center justify-center md:h-[550px]">
 
-              <div className="absolute h-[330px] w-[330px] rounded-full border border-[#c6a56a]/20 md:h-[430px] md:w-[430px]"
+              <div
+                className="absolute h-[330px] w-[330px] rounded-full border border-[#c6a56a]/20 md:h-[430px] md:w-[430px]"
                 style={{ transform: "rotateX(65deg) rotateZ(-20deg)" }}
               />
 
-              <div className="absolute h-[370px] w-[370px] rounded-full border border-[#c6a56a]/10 md:h-[490px] md:w-[490px]"
+              <div
+                className="absolute h-[370px] w-[370px] rounded-full border border-[#c6a56a]/10 md:h-[490px] md:w-[490px]"
                 style={{ transform: "rotateX(65deg) rotateZ(35deg)" }}
               />
 
@@ -291,7 +291,8 @@ export default function Home() {
 
               <div className="absolute right-0 top-10 z-20 w-[125px] rotate-[7deg] border border-white/20 bg-[#24231f] p-2 shadow-2xl sm:right-[-5px] sm:w-[155px]">
 
-                <img src={images.detail}
+                <img
+                  src={images.detail}
                   alt="Precision haircut"
                   className="h-[100px] w-full object-cover sm:h-[125px]"
                 />
@@ -314,9 +315,8 @@ export default function Home() {
           </div>
         </section>
 
-
-        {/* ================= ABOUT ================= */}
-        <section className="bg-[#f1ede5] py-14 text-[#1b1a17] md:py-20">
+        {/* ABOUT SECTION */}
+        <section className="bg-[#f1ede5] py-[35px] text-[#1b1a17]">
 
           <div className="mx-auto grid max-w-[1180px] items-center gap-10 px-5 md:grid-cols-2 md:px-8">
 
@@ -373,8 +373,10 @@ export default function Home() {
 
               </div>
 
-              <Link to="/about"
-                className="mt-8 inline-flex items-center gap-3 border-b border-[#b89b6a] pb-2 text-sm font-bold text-[#8a6c3f]">
+              <Link
+                to="/about"
+                className="mt-8 inline-flex items-center gap-3 border-b border-[#b89b6a] pb-2 text-sm font-bold text-[#8a6c3f]"
+              >
                 Discover Our Story
                 <ArrowUpRight size={18} />
               </Link>
@@ -383,9 +385,8 @@ export default function Home() {
           </div>
         </section>
 
-
-        {/* ================= SERVICES ================= */}
-        <section className="bg-[#171715] py-14 md:py-20">
+        {/* SERVICES SECTION */}
+        <section className="bg-[#171715] py-[35px]">
 
           <div className="mx-auto max-w-[1180px] px-5 md:px-8">
 
@@ -407,8 +408,10 @@ export default function Home() {
                 </p>
               </div>
 
-              <Link to="/services"
-                className="hidden items-center gap-2 border-b border-[#c6a56a] pb-2 text-sm text-[#c6a56a] md:flex">
+              <Link
+                to="/services"
+                className="hidden items-center gap-2 border-b border-[#c6a56a] pb-2 text-sm text-[#c6a56a] md:flex"
+              >
                 View All Services <ArrowUpRight size={17} />
               </Link>
 
@@ -420,17 +423,18 @@ export default function Home() {
               ))}
             </div>
 
-            <Link to="/services"
-              className="mt-7 inline-flex items-center gap-2 border-b border-[#c6a56a] pb-2 text-sm text-[#c6a56a] md:hidden">
+            <Link
+              to="/services"
+              className="mt-7 inline-flex items-center gap-2 border-b border-[#c6a56a] pb-2 text-sm text-[#c6a56a] md:hidden"
+            >
               View All Services <ArrowUpRight size={17} />
             </Link>
 
           </div>
         </section>
 
-
-        {/* ================= EXPERIENCE ================= */}
-        <section className="relative overflow-hidden bg-[#11110f] py-14 md:py-20">
+        {/* EXPERIENCE SECTION */}
+        <section className="relative overflow-hidden bg-[#11110f] py-[35px]">
 
           <div className="absolute -left-40 top-0 h-[400px] w-[400px] rounded-full bg-[#c6a56a]/10 blur-[100px]" />
 
@@ -477,8 +481,10 @@ export default function Home() {
 
               </div>
 
-              <Link to="/booking"
-                className="gold-button mt-8 inline-flex items-center gap-3 bg-[#c6a56a] px-6 py-4 text-sm font-bold text-[#11110f]">
+              <Link
+                to="/booking"
+                className="gold-button mt-8 inline-flex items-center gap-3 bg-[#c6a56a] px-6 py-4 text-sm font-bold text-[#11110f]"
+              >
                 Experience NOIR
                 <ArrowUpRight size={18} />
               </Link>
@@ -505,9 +511,8 @@ export default function Home() {
           </div>
         </section>
 
-
-        {/* ================= WHY CHOOSE US ================= */}
-        <section className="bg-[#f1ede5] py-14 text-[#1b1a17] md:py-20">
+        {/* WHY CHOOSE US */}
+        <section className="bg-[#f1ede5] py-[35px] text-[#1b1a17]">
 
           <div className="mx-auto max-w-[1180px] px-5 md:px-8">
 
@@ -528,8 +533,10 @@ export default function Home() {
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
 
               {features.map(({ icon: Icon, title, desc }, i) => (
-                <div key={title}
-                  className="luxury-card border border-[#d9d0c2] bg-[#ebe5da] p-6">
+                <div
+                  key={title}
+                  className="luxury-card border border-[#d9d0c2] bg-[#ebe5da] p-6"
+                >
 
                   <div className="flex h-12 w-12 items-center justify-center border border-[#b89b6a]/50 bg-[#f5efe3] text-[#997744] shadow-sm">
                     <Icon size={23} />
@@ -554,9 +561,8 @@ export default function Home() {
           </div>
         </section>
 
-
-        {/* ================= GALLERY ================= */}
-        <section className="bg-[#171715] py-14 md:py-20">
+        {/* GALLERY */}
+        <section className="bg-[#171715] py-[35px]">
 
           <div className="mx-auto max-w-[1180px] px-5 md:px-8">
 
@@ -572,10 +578,12 @@ export default function Home() {
                 </h2>
               </div>
 
-              <a href="https://www.instagram.com/"
+              <a
+                href="https://www.instagram.com/"
                 target="_blank"
                 rel="noreferrer"
-                className="hidden items-center gap-2 text-xs text-[#c6a56a] sm:flex">
+                className="hidden items-center gap-2 text-xs text-[#c6a56a] sm:flex"
+              >
                 <Instagram size={16} />
                 FOLLOW US
               </a>
@@ -584,13 +592,14 @@ export default function Home() {
 
             <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
 
-              {galleryImages.map((item, i) => (
-                <div key={item.title}
-                  className={`gallery-item group relative overflow-hidden ${
-                    i === 0 || i === 3 ? "h-[210px] md:h-[280px]" : "h-[210px] md:h-[280px]"
-                  }`}>
+              {galleryImages.map((item) => (
+                <div
+                  key={item.title}
+                  className="gallery-item group relative h-[210px] overflow-hidden md:h-[280px]"
+                >
 
-                  <img src={item.src}
+                  <img
+                    src={item.src}
                     alt={item.title}
                     className="h-full w-full object-cover"
                   />
@@ -618,9 +627,8 @@ export default function Home() {
           </div>
         </section>
 
-
-        {/* ================= TESTIMONIAL ================= */}
-        <section className="relative overflow-hidden bg-[#f1ede5] py-14 text-[#1b1a17] md:py-20">
+        {/* TESTIMONIAL */}
+        <section className="relative overflow-hidden bg-[#f1ede5] py-[35px] text-[#1b1a17]">
 
           <div className="mx-auto max-w-[950px] px-5 text-center">
 
@@ -653,12 +661,12 @@ export default function Home() {
           </div>
         </section>
 
-
-        {/* ================= FINAL CTA ================= */}
-        <section className="relative overflow-hidden bg-[#24231f] py-14 md:py-16">
+        {/* FINAL CTA */}
+        <section className="relative overflow-hidden bg-[#24231f] py-[35px]">
 
           <div className="absolute inset-0 opacity-20">
-            <img src={images.gallery}
+            <img
+              src={images.gallery}
               alt=""
               className="h-full w-full object-cover"
             />
@@ -681,8 +689,10 @@ export default function Home() {
               </p>
             </div>
 
-            <Link to="/booking"
-              className="gold-button inline-flex shrink-0 items-center gap-4 bg-[#c6a56a] px-7 py-4 text-sm font-bold text-[#11110f]">
+            <Link
+              to="/booking"
+              className="gold-button inline-flex shrink-0 items-center gap-4 bg-[#c6a56a] px-7 py-4 text-sm font-bold text-[#11110f]"
+            >
               Reserve Your Chair
               <ArrowUpRight size={20} />
             </Link>

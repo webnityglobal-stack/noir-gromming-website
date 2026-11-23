@@ -16,7 +16,7 @@ export default function Navbar() {
 
   return (
     <header className="absolute left-0 top-0 z-50 w-full border-b border-white/10 bg-noir/80 backdrop-blur-md">
-      <nav className="mx-auto flex h-[88px] max-w-[1180px] items-center justify-between px-5 md:px-6">
+      <nav className="mx-auto flex h-[82px] max-w-[1180px] items-center justify-between px-5 md:px-6">
 
         <Link
           to="/"
@@ -27,9 +27,9 @@ export default function Navbar() {
             <Scissors size={21} />
           </span>
 
-          <span className="font-display text-2xl font-bold tracking-[2px] text-cream">
+          <span className="font-display text-[26px] font-bold leading-none tracking-[2px] text-cream">
             NOIR
-            <small className="block font-sans text-xs font-semibold tracking-[2px] text-gold">
+            <small className="mt-1 block font-sans text-[11px] font-semibold tracking-[2px] text-gold">
               GROOMING STUDIO
             </small>
           </span>
@@ -42,7 +42,7 @@ export default function Navbar() {
               to={path}
               end={path === "/"}
               className={({ isActive }) =>
-                `text-base transition-colors hover:text-gold ${
+                `text-[16px] font-medium transition-colors hover:text-gold ${
                   isActive ? "text-gold" : "text-cream/75"
                 }`
               }
@@ -54,7 +54,7 @@ export default function Navbar() {
 
         <Link
           to="/booking"
-          className="hidden items-center gap-3 border border-gold px-5 py-3 text-base text-gold transition hover:bg-gold hover:text-noir md:flex"
+          className="hidden items-center gap-3 border border-gold px-5 py-3 text-[15px] font-medium text-gold transition hover:bg-gold hover:text-noir md:flex"
         >
           Book a visit <ArrowUpRight size={17} />
         </Link>
@@ -79,7 +79,7 @@ export default function Navbar() {
               end={path === "/"}
               onClick={() => setOpen(false)}
               className={({ isActive }) =>
-                `border-b border-white/10 py-4 text-base hover:text-gold ${
+                `border-b border-white/10 py-4 text-[16px] font-medium hover:text-gold ${
                   isActive ? "text-gold" : "text-cream"
                 }`
               }
@@ -91,7 +91,7 @@ export default function Navbar() {
           <Link
             to="/booking"
             onClick={() => setOpen(false)}
-            className="mt-5 flex items-center justify-center gap-3 bg-gold py-4 text-base font-semibold text-noir"
+            className="mt-5 flex items-center justify-center gap-3 bg-gold py-4 text-[15px] font-semibold text-noir"
           >
             Book a visit <ArrowUpRight size={18} />
           </Link>
